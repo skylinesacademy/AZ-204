@@ -1,0 +1,8 @@
+az storage account create `
+--name secondstgacct `
+--resource-group Skylines `
+--location CentralUS `
+--kind StorageV2 `
+--sku Standard_ZRS `
+--https-only true `
+--access-tier Hotn

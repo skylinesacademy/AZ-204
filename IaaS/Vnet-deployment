@@ -1,0 +1,5 @@
+New-AzResourceGroupDeployment `
+-Name VnetDemo `
+-ResourceGroupName Skylines `
+-TemplateFile C:\Users\Owner\Desktop\Examples\arm-vnet.json `
+-TemplateParameterFile C:\Users\Owner\Desktop\Examples\arm-vnet.parameters.json

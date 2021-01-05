@@ -1,0 +1,139 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "SentimentDemo",
+    "description": "Uses the Cognitive Services Text Analytics Sentiment API to determine whether text is positive or negative"
+  },
+  "host": "westus.api.cognitive.microsoft.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/text/analytics/v2.0/sentiment": {
+      "post": {
+        "summary": "Returns a numeric score representing the sentiment detected",
+        "description": "The API returns a numeric score between 0 and 1. Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.",
+        "operationId": "DetectSentiment",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "documents": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "language": {
+                        "type": "string",
+                        "description": "The 2 or 4 character language code for the text",
+                        "x-ms-summary": "language",
+                        "title": "Language",
+                        "x-ms-visibility": "",
+                        "default": "en"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "An identifier for each document that you submit",
+                        "x-ms-summary": "id",
+                        "title": "ID",
+                        "x-ms-visibility": "",
+                        "default": "1"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "The text to analyze for sentiment",
+                        "x-ms-summary": "text",
+                        "title": "Text",
+                        "x-ms-visibility": ""
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "language",
+                      "text"
+                    ]
+                  },
+                  "description": "documents",
+                  "x-ms-summary": "documents"
+                }
+              },
+              "default": {
+                "documents": [
+                  {
+                    "language": "en-us",
+                    "id": "1",
+                    "text": "I enjoyed the new movie after a long day."
+                  }
+                ]
+              },
+              "required": [
+                "documents"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "documents": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "score": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "score",
+                        "x-ms-summary": "score"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "id",
+                        "x-ms-summary": "id"
+                      }
+                    }
+                  },
+                  "description": "documents",
+                  "x-ms-summary": "documents"
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "errors",
+                  "x-ms-summary": "errors"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Ocp-Apim-Subscription-Key"
+    }
+  },
+  "security": [],
+  "tags": []
+}

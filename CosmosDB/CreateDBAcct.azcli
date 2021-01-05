@@ -1,0 +1,8 @@
+az cosmosdb create `
+    --name "skylinesdemoacct" `
+    --resource-group "Skylines" `
+    --default-consistency-level BoundedStaleness `
+    --max-interval "300" `
+    --max-staleness-prefix "100000" `
+    --locations regionName='West US 2' failoverPriority=0 isZoneRedundant=False `
+    --locations regionName='East US 2' failoverPriority=1 isZoneRedundant=False

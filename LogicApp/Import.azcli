@@ -1,0 +1,7 @@
+
+
+az group deployment create \
+--resource-group Skylines \
+--template-uri ./SkylinesLogicApp.json
+
+

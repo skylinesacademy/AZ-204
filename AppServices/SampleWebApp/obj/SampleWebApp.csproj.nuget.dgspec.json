@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/joe.fecht/Projects/SampleWebApp/SampleWebApp/SampleWebApp.csproj": {}
+  },
+  "projects": {
+    "/Users/joe.fecht/Projects/SampleWebApp/SampleWebApp/SampleWebApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/joe.fecht/Projects/SampleWebApp/SampleWebApp/SampleWebApp.csproj",
+        "projectName": "SampleWebApp",
+        "projectPath": "/Users/joe.fecht/Projects/SampleWebApp/SampleWebApp/SampleWebApp.csproj",
+        "packagesPath": "/Users/joe.fecht/.nuget/packages/",
+        "outputPath": "/Users/joe.fecht/Projects/SampleWebApp/SampleWebApp/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/joe.fecht/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "http://www.nuget.org/api/v2": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

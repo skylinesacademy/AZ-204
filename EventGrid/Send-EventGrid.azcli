@@ -1,0 +1,11 @@
+endpoint=$(az eventgrid topic show --name SkylinesEGTopic -g skylines --query "endpoint" --output tsv)
+key=$(az eventgrid topic key list --name SkylinesEGTopic -g skylines --query "key1" --output tsv)
+event1='[ {"id": "'"$RANDOM"'", "eventType": "recordInserted", "subject": "myapp/vehicles/motorcycles", "eventTime": "'`date +%Y-%m-%dT%H:%M:%S%z`'", "data":{ "make": "Triumph", "model": "Street Triple"},"dataVersion": "1.0"} ]'
+event2='[ {"id": "'"$RANDOM"'", "eventType": "recordInserted", "subject": "myapp/vehicles/motorcycles", "eventTime": "'`date +%Y-%m-%dT%H:%M:%S%z`'", "data":{ "make": "KTM", "model": "Super Duke 1290r"},"dataVersion": "1.0"} ]'
+event3='[ {"id": "'"$RANDOM"'", "eventType": "recordInserted", "subject": "myapp/vehicles/motorcycles", "eventTime": "'`date +%Y-%m-%dT%H:%M:%S%z`'", "data":{ "make": "Triumph", "model": "Thruxton"},"dataVersion": "1.0"} ]'
+
+
+
+curl -X POST -H "aeg-sas-key: $key" -d "$event1" $endpoint
+curl -X POST -H "aeg-sas-key: $key" -d "$event2" $endpoint
+curl -X POST -H "aeg-sas-key: $key" -d "$event3" $endpoint
